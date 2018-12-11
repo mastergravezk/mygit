@@ -1,0 +1,7 @@
+package com.thit.elasticsearch.esdb;
+
+public interface DeleteESOperator{
+
+	public abstract Object delete(Object index, Object type, Object spare1, Object spare2, Object spare3, Object spare4,
+			Object spare5, Object spare6) throws Exception;
+}
