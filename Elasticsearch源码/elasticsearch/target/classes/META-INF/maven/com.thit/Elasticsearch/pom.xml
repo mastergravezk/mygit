@@ -1,0 +1,188 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.thit</groupId>
+	<artifactId>Elasticsearch</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>Elasticsearch</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<elasticsearchVersion>5.6.3</elasticsearchVersion>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>${elasticsearchVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch-analysis-ik</artifactId>
+			<version>5.6.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>transport</artifactId>
+			<version>${elasticsearchVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.netty/netty-transport -->
+		<!-- 引入之后PreBuiltTransportClient会引入 -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-transport</artifactId>
+			<version>4.1.13.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb -->
+		<!-- 引入连接 mongo数据库的相关jar -->
+		<dependency>
+			<groupId>com.github.richardwilly98.elasticsearch</groupId>
+			<artifactId>elasticsearch-river-mongodb</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- oracle数据库连接 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.mongodb.async/mongo-driver -->
+		<!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<!-- 平台jar -->
+		<dependency>
+			<groupId>com.thit</groupId>
+			<artifactId>tieam</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.github.zacker330.es/ik-analysis-core -->
+		<dependency>
+			<groupId>io.github.zacker330.es</groupId>
+			<artifactId>ik-analysis-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch-analysis-icu -->
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch-analysis-icu</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.elasticsearch.plugin/delete-by-query -->
+		<!-- https://mvnrepository.com/artifact/org.elasticsearch.plugin/delete-by-query -->
+		<dependency>
+			<groupId>org.elasticsearch.plugin</groupId>
+			<artifactId>delete-by-query</artifactId>
+			<version>2.4.6</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>x-pack-transport</artifactId>
+			<version>5.6.3</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.elasticsearch</groupId>
+				<artifactId>elasticsearch-analysis-ik</artifactId>
+				<version>5.6.9</version>
+			</plugin>
+			<!-- 打jar包的插件 -->
+			<!-- plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
+				<version>2.8</version> </plugin -->
+
+		</plugins>
+	</build>
+	<!-- lucene下载地址 -->
+	<!--repositories> <repository> <id>elastic-lucene-snapshots</id> <name>Elastic 
+		Lucene Snapshots</name> <url>http://s3.amazonaws.com/download.elasticsearch.org/lucenesnapshots/00142c9</url> 
+		<releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled> 
+		</snapshots> </repository> <repository> <id>sonatype-releases</id> <name>Sonatype 
+		Releases Repository</name> <url>https://oss.sonatype.org/content/repositories/releases</url> 
+		</repository> <repository> <id>sonatype-releases</id> <name>Sonatype Releases 
+		Repository</name> <url>https://mvnrepository.com/artifact/com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb</url> 
+		</repository> </repositories -->
+	<!--issueManagement> <system>GitHub</system> <url> https://github.com/richardwilly98/elasticsearch-river-mongodb/issues 
+		</url> </issueManagement> <dependencyManagement> <dependencies> <dependency> 
+		<groupId>ojdbc</groupId> <artifactId>ojdbc</artifactId> <version>14</version> 
+		</dependency> </dependencies> </dependencyManagement -->
+	<!--dependencyManagement> <dependencies> <dependency> <groupId>thit.com</groupId> 
+		<artifactId>tieam</artifactId> <version>1.0</version> </dependency> </dependencies> 
+		</dependencyManagement -->
+	<repositories>
+		<!-- add the elasticsearch repo -->
+		<repository>
+			<id>elasticsearch-releases</id>
+			<url>https://artifacts.elastic.co/maven</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>
