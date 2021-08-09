@@ -10,7 +10,7 @@
 	<name>Elasticsearch</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<elasticsearchVersion>5.6.3</elasticsearchVersion>
+		<elasticsearchVersion>6.8.17</elasticsearchVersion>
 	</properties>
 	<dependencies>
 		<dependency>
